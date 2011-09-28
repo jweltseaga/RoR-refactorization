@@ -19,7 +19,6 @@ class HoboMigration1 < ActiveRecord::Migration
       t.datetime :created_at
       t.datetime :updated_at
     end
-		Site.create_translation_table! :name => :string
 
     create_table :categories do |t|
       t.string   :name
@@ -27,7 +26,6 @@ class HoboMigration1 < ActiveRecord::Migration
       t.datetime :updated_at
       t.integer  :site_id
     end
-		Category.create_translation_table! :name => :string
     add_index :categories, [:site_id]
   end
 
@@ -36,7 +34,5 @@ class HoboMigration1 < ActiveRecord::Migration
     drop_table :sites
     drop_table :categories
 		Machine.drop_translation_table!
-		Site.drop_translation_table!
-		Category.drop_translation_table!
   end
 end

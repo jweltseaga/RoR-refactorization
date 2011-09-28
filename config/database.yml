@@ -19,7 +19,7 @@ test:
 
 production:
   adapter: postgresql
-  database: website_production
-  username: postgres
-  password: dev123
+  database: seaga_sites
+  username: deploy
+  password: Vend%4#
   host: localhost
