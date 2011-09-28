@@ -730,7 +730,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="external_description, internal_description, file" param/>
+            <field-list fields="external_description, internal_description" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine.collection.heading" count="&this.machines.count" >

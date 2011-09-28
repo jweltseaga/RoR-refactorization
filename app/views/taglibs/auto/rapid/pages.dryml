@@ -85,6 +85,7 @@
 
     <content: param>
           <header param="content-header">
+            <a:site param="parent-link">&laquo; <ht key="category.actions.back_to_parent" parent="Site" name="&this">Back to <name/></ht></a:site>
             <h2 param="heading">
               <ht key="category.show.heading" name="#{name(:no_wrapper => true)}">
                 Category <name/>
@@ -102,7 +103,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="position, site" param/>
+            <field-list fields="position" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine_assignment.collection.heading" count="&this.machine_assignments.count" >
@@ -461,6 +462,7 @@
       <section-group>
         <section param="main-content">
           <header param="content-header">
+            <a:manuals param="parent-link">&laquo; <ht key="machine.actions.back_to_parent" parent="Manual" name="&this">Back to <name/></ht></a:manuals>
             <h2 param="heading">
               <ht key="machine.show.heading" name="#{name(:no_wrapper => true)}">
                 Machine <name/>
@@ -740,7 +742,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="external_description, internal_description, file" param/>
+            <field-list fields="external_description, internal_description" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine.collection.heading" count="&this.machines.count" >
