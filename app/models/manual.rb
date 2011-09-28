@@ -6,7 +6,7 @@ class Manual < ActiveRecord::Base
     name                 :string
     external_description :string
     internal_description :string
-    file                 :string
+    file_name            :string
     timestamps
   end
 	
