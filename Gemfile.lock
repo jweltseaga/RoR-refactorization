@@ -1,3 +1,28 @@
+GIT
+  remote: git://github.com/bryanlarsen/hobo-jquery.git
+  revision: 3578efd55304328249a7df2a8167bc731dc0e608
+  branch: rails3
+  specs:
+    hobo-jquery (1.3.0pre1)
+
+GIT
+  remote: git://github.com/tablatom/hobo.git
+  revision: d3a7f441ebc4fa00cef1a682f4ef43333b9b4a4f
+  branch: rails3
+  specs:
+    dryml (1.3.0.RC2)
+      actionpack (~> 3.0.0)
+      hobo_support (= 1.3.0.RC2)
+    hobo (1.3.0.RC2)
+      dryml (= 1.3.0.RC2)
+      hobo_fields (= 1.3.0.RC2)
+      hobo_support (= 1.3.0.RC2)
+      will_paginate (>= 3.0.0)
+    hobo_fields (1.3.0.RC2)
+      hobo_support (= 1.3.0.RC2)
+    hobo_support (1.3.0.RC2)
+      rails (~> 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -30,22 +55,11 @@ GEM
     activesupport (3.0.9)
     arel (2.0.10)
     builder (2.1.2)
-    dryml (1.3.0.pre31)
-      actionpack (>= 3.0.0)
-      hobo_support (= 1.3.0.pre31)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    hobo (1.3.0.pre31)
-      dryml (= 1.3.0.pre31)
-      hobo_fields (= 1.3.0.pre31)
-      hobo_support (= 1.3.0.pre31)
-      rails (>= 3.0.0)
-      will_paginate (>= 3.0.pre)
-    hobo_fields (1.3.0.pre31)
-      hobo_support (= 1.3.0.pre31)
-      rails (>= 3.0.0)
-    hobo_support (1.3.0.pre31)
-      rails (>= 3.0.0)
+    globalize3 (0.1.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
     i18n (0.5.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -53,8 +67,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    pg (0.11.0-x86-mingw32)
     polyglot (0.3.2)
-    rack (1.2.3)
+    rack (1.2.4)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
@@ -74,19 +89,21 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.4)
     rake (0.9.2)
-    rdoc (3.8)
-    sqlite3 (1.3.4-x86-mingw32)
+    rdoc (3.9.4)
     thor (0.14.6)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    will_paginate (3.0.pre4)
+    will_paginate (3.0.0)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  hobo (>= 1.3.0.pre31)
+  globalize3
+  hobo!
+  hobo-jquery!
+  pg
   rails (= 3.0.9)
-  sqlite3
+  will_paginate (= 3.0.0)

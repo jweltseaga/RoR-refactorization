@@ -10,7 +10,108 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110919183135) do
+ActiveRecord::Schema.define(:version => 20110922133642) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "site_id"
+    t.text     "description"
+    t.integer  "position"
+  end
+
+  add_index "categories", ["site_id"], :name => "index_categories_on_site_id"
+
+  create_table "feature_translations", :force => true do |t|
+    t.integer  "feature_id"
+    t.string   "locale"
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feature_translations", ["feature_id"], :name => "index_feature_translations_on_feature_id"
+
+  create_table "features", :force => true do |t|
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "machine_id"
+  end
+
+  add_index "features", ["machine_id"], :name => "index_features_on_machine_id"
+
+  create_table "machine_assignments", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "machine_id"
+    t.integer  "category_id"
+    t.integer  "position"
+  end
+
+  add_index "machine_assignments", ["category_id"], :name => "index_machine_assignments_on_category_id"
+  add_index "machine_assignments", ["machine_id"], :name => "index_machine_assignments_on_machine_id"
+
+  create_table "machine_translations", :force => true do |t|
+    t.integer  "machine_id"
+    t.string   "locale"
+    t.text     "description"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "machine_translations", ["machine_id"], :name => "index_machine_translations_on_machine_id"
+
+  create_table "machines", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "height"
+    t.integer  "width"
+    t.integer  "depth"
+    t.integer  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "manual_assignments", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "machine_id"
+    t.integer  "manual_id"
+    t.integer  "position"
+  end
+
+  add_index "manual_assignments", ["machine_id"], :name => "index_manual_assignments_on_machine_id"
+  add_index "manual_assignments", ["manual_id"], :name => "index_manual_assignments_on_manual_id"
+
+  create_table "manual_translations", :force => true do |t|
+    t.integer  "manual_id"
+    t.string   "locale"
+    t.string   "external_description"
+    t.string   "name"
+    t.string   "internal_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "manual_translations", ["manual_id"], :name => "index_manual_translations_on_manual_id"
+
+  create_table "manuals", :force => true do |t|
+    t.string   "name"
+    t.string   "external_description"
+    t.string   "internal_description"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40
@@ -24,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20110919183135) do
     t.datetime "updated_at"
     t.string   "state",                                   :default => "inactive"
     t.datetime "key_timestamp"
+    t.string   "user_locale",                             :default => "us"
   end
 
   add_index "users", ["state"], :name => "index_users_on_state"

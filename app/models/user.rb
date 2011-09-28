@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
     name          :string, :required, :unique
     email_address :email_address, :login => true
     administrator :boolean, :default => false
+		user_locale enum_string(:us, :uk, :in), :default => "us"
     timestamps
   end
 

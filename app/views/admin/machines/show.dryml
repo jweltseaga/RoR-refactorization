@@ -1,0 +1,23 @@
+<show-page>
+	<after-manual_assignments-collection-heading:>
+		<h5>Drag and drop to change the primary manual</h5>
+	</after-manual_assignments-collection-heading:>
+	<manual_assignments-collection: replace>
+		<do part="after-manual-assignment">
+			<sortable-collection:manual_assignments/>
+		</do>
+	</manual_assignments-collection>
+	<after-manual_assignments-collection-section:>
+		<section if="&can_create?(@machine.manual_assignments)">
+			<h3>
+				<ht key="manual_assignment.collection.add_form_heading" count="1">
+					Add a Manual Assignment
+				</ht>
+			</h3>
+			<form with="&@manual_assignment || new_for_current_user(@machine.manual_assignments)" owner="machine" update="after-manual-assignment" without-cancel>
+				<field-list: skip="position, machine"/>
+				<submit: label="#{ht 'manual_assignment.actions.add', :default=>['Add'] }"/>
+			</form>
+		</section>
+	</after-manual_assignments-collection-section:>
+</show-page>

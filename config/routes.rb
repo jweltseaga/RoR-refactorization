@@ -1,8 +1,16 @@
 Websites::Application.routes.draw do
-  root :to => 'front#index'
+  match 'admin/front' => 'admin/front#index', :as => 'admin_front'
 
+  match 'search' => 'admin/front#search', :as => 'site_search'
+
+  root :to => 'front#index'
+	
   match 'search' => 'front#search', :as => 'site_search'
 
+
+	#scope "/admin" do
+	#	resources :categories, :features, :machines, :sites
+	#end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -59,4 +67,7 @@ Websites::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+	
+	  # Resource routes for controller "categories"
+
 end

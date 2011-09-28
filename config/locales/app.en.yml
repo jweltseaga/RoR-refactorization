@@ -4,6 +4,10 @@
 en:
   hello: "Hello world"
 
+  activerecord:
+    attributes:
+      feature:
+        name: Feature
 #  attributes:
 #    created_at: Created at
 #    updated_at: Updated at
