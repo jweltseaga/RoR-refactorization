@@ -32,5 +32,5 @@ gem "rake", "0.8.7"
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "hobo", :git => "git://github.com/tablatom/hobo.git", :branch => "rails3" 
+gem "hobo", :git => "git://github.com/tablatom/hobo.git", :branch => "rails3", :ref => "85741ec6b99988fec5c6a72fd73ddd90ec520c5c"
 gem "hobo-jquery", :git => "git://github.com/bryanlarsen/hobo-jquery.git", :branch => "rails3"

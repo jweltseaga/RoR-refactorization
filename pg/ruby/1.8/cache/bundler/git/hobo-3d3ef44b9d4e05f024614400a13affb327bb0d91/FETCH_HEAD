@@ -1,7 +1,7 @@
 d411bbbef232419c557b0345feafd75dc6dfdca1		branch '1-0-stable' of git://github.com/tablatom/hobo
 8b55b49dcf1ada582758268e8f6fdd83b4f89658		branch 'experiments' of git://github.com/tablatom/hobo
 26c79febe0981bb94a8b9c41496dca01c6ca22d1		branch 'master' of git://github.com/tablatom/hobo
-d3a7f441ebc4fa00cef1a682f4ef43333b9b4a4f		branch 'rails3' of git://github.com/tablatom/hobo
+c3e79948ad5f6a2b290a4accf9cff024bd3f6a09		branch 'rails3' of git://github.com/tablatom/hobo
 f53c04aedd571f6810a417dd1f09e6b34ae9359c		branch 'reeport' of git://github.com/tablatom/hobo
 3abe182c7d79ec2e5abcb47b0c64650006b8badb	not-for-merge	tag '1.0.0' of git://github.com/tablatom/hobo
 1ce4abec7d722a97d94066981d9955e971236b04	not-for-merge	tag '1.0.1' of git://github.com/tablatom/hobo
