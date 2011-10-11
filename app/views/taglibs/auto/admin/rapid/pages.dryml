@@ -78,7 +78,7 @@
 
 
 <def tag="show-page" for="Category">
-  <page merge title="#{ht 'category.show.title', :default=>['Category'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'category.show.title', :default=>['Category'] }">
 
     <body: class="show-page category" param/>
 
@@ -86,15 +86,15 @@
           <header param="content-header">
             <a:site param="parent-link">&laquo; <ht key="category.actions.back_to_parent" parent="Site" name="&this">Back to <name/></ht></a:site>
             <h2 param="heading">
-              <ht key="category.show.heading" name="#{name(:no_wrapper => true)}">
-                Category <name/>
+              <ht key="category.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
             <record-flags fields="" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="category.actions.edit" name="#{name(:no_wrapper => true)}">
+              <ht key="category.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
                 Edit Category
               </ht>
             </a>
@@ -120,14 +120,14 @@
 
 
 <def tag="edit-page" for="Category">
-  <page merge title="#{ht 'category.edit.title', :default=>['Edit Category'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'category.edit.title', :default=>['Edit Category'] }">
 
     <body: class="edit-page category" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="category.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="category.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit Category
           </ht>
         </h2>
@@ -212,7 +212,7 @@
 
 
 <def tag="show-page" for="Feature">
-  <page merge title="#{ht 'feature.show.title', :default=>['Feature'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'feature.show.title', :default=>['Feature'] }">
 
     <body: class="show-page feature" param/>
 
@@ -220,8 +220,8 @@
           <header param="content-header">
             <a:machine param="parent-link">&laquo; <ht key="feature.actions.back_to_parent" parent="Machine" name="&this">Back to <name/></ht></a:machine>
             <h2 param="heading">
-              <ht key="feature.show.heading" name="#{name(:no_wrapper => true)}">
-                Feature <name/>
+              <ht key="feature.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
@@ -237,14 +237,14 @@
 
 
 <def tag="edit-page" for="Feature">
-  <page merge title="#{ht 'feature.edit.title', :default=>['Edit Feature'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'feature.edit.title', :default=>['Edit Feature'] }">
 
     <body: class="edit-page feature" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="feature.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="feature.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit Feature
           </ht>
         </h2>
@@ -330,7 +330,7 @@
 
 
 <def tag="show-page" for="MachineAssignment">
-  <page merge title="#{ht 'machine_assignment.show.title', :default=>['Machine assignment'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'machine_assignment.show.title', :default=>['Machine assignment'] }">
 
     <body: class="show-page machine-assignment" param/>
 
@@ -338,8 +338,8 @@
           <header param="content-header">
             <a:category param="parent-link">&laquo; <ht key="machine_assignment.actions.back_to_parent" parent="Category" name="&this">Back to <name/></ht></a:category>
             <h2 param="heading">
-              <ht key="machine_assignment.show.heading" name="#{name(:no_wrapper => true)}">
-                Machine assignment <name/>
+              <ht key="machine_assignment.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
@@ -356,14 +356,14 @@
 
 
 <def tag="edit-page" for="MachineAssignment">
-  <page merge title="#{ht 'machine_assignment.edit.title', :default=>['Edit Machine assignment'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'machine_assignment.edit.title', :default=>['Edit Machine assignment'] }">
 
     <body: class="edit-page machine-assignment" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="machine_assignment.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="machine_assignment.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit Machine assignment
           </ht>
         </h2>
@@ -445,7 +445,7 @@
 
 
 <def tag="show-page" for="Machine">
-  <page merge title="#{ht 'machine.show.title', :default=>['Machine'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'machine.show.title', :default=>['Machine'] }">
 
     <body: class="show-page machine" param/>
 
@@ -455,15 +455,15 @@
           <header param="content-header">
             <a:manuals param="parent-link">&laquo; <ht key="machine.actions.back_to_parent" parent="Manual" name="&this">Back to <name/></ht></a:manuals>
             <h2 param="heading">
-              <ht key="machine.show.heading" name="#{name(:no_wrapper => true)}">
-                Machine <name/>
+              <ht key="machine.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
             <record-flags fields="" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="machine.actions.edit" name="#{name(:no_wrapper => true)}">
+              <ht key="machine.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
                 Edit Machine
               </ht>
             </a>
@@ -502,14 +502,14 @@
 
 
 <def tag="edit-page" for="Machine">
-  <page merge title="#{ht 'machine.edit.title', :default=>['Edit Machine'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'machine.edit.title', :default=>['Edit Machine'] }">
 
     <body: class="edit-page machine" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="machine.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="machine.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit Machine
           </ht>
         </h2>
@@ -591,15 +591,15 @@
 
 
 <def tag="show-page" for="ManualAssignment">
-  <page merge title="#{ht 'manual_assignment.show.title', :default=>['Manual assignment'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'manual_assignment.show.title', :default=>['Manual assignment'] }">
 
     <body: class="show-page manual-assignment" param/>
 
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="manual_assignment.show.heading" name="#{name(:no_wrapper => true)}">
-                Manual assignment <name/>
+              <ht key="manual_assignment.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
@@ -616,14 +616,14 @@
 
 
 <def tag="edit-page" for="ManualAssignment">
-  <page merge title="#{ht 'manual_assignment.edit.title', :default=>['Edit Manual assignment'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'manual_assignment.edit.title', :default=>['Edit Manual assignment'] }">
 
     <body: class="edit-page manual-assignment" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="manual_assignment.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="manual_assignment.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit Manual assignment
           </ht>
         </h2>
@@ -708,22 +708,22 @@
 
 
 <def tag="show-page" for="Manual">
-  <page merge title="#{ht 'manual.show.title', :default=>['Manual'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'manual.show.title', :default=>['Manual'] }">
 
     <body: class="show-page manual" param/>
 
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="manual.show.heading" name="#{name(:no_wrapper => true)}">
-                Manual <name/>
+              <ht key="manual.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
             <record-flags fields="" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="manual.actions.edit" name="#{name(:no_wrapper => true)}">
+              <ht key="manual.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
                 Edit Manual
               </ht>
             </a>
@@ -748,14 +748,14 @@
 
 
 <def tag="edit-page" for="Manual">
-  <page merge title="#{ht 'manual.edit.title', :default=>['Edit Manual'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'manual.edit.title', :default=>['Edit Manual'] }">
 
     <body: class="edit-page manual" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="manual.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="manual.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit Manual
           </ht>
         </h2>
@@ -837,22 +837,22 @@
 
 
 <def tag="show-page" for="Site">
-  <page merge title="#{ht 'site.show.title', :default=>['Site'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'site.show.title', :default=>['Site'] }">
 
     <body: class="show-page site" param/>
 
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="site.show.heading" name="#{name(:no_wrapper => true)}">
-                Site <name/>
+              <ht key="site.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
             <record-flags fields="" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="site.actions.edit" name="#{name(:no_wrapper => true)}">
+              <ht key="site.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
                 Edit Site
               </ht>
             </a>
@@ -888,14 +888,14 @@
 
 
 <def tag="edit-page" for="Site">
-  <page merge title="#{ht 'site.edit.title', :default=>['Edit Site'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'site.edit.title', :default=>['Edit Site'] }">
 
     <body: class="edit-page site" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="site.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="site.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit Site
           </ht>
         </h2>
@@ -977,22 +977,22 @@
 
 
 <def tag="show-page" for="User">
-  <page merge title="#{ht 'user.show.title', :default=>['User'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'user.show.title', :default=>['User'] }">
 
     <body: class="show-page user" param/>
 
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="user.show.heading" name="#{name(:no_wrapper => true)}">
-                User <name/>
+              <ht key="user.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
               </ht>
             </h2>
 
             <record-flags fields="administrator" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="user.actions.edit" name="#{name(:no_wrapper => true)}">
+              <ht key="user.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
                 Edit User
               </ht>
             </a>
@@ -1008,14 +1008,14 @@
 
 
 <def tag="edit-page" for="User">
-  <page merge title="#{ht 'user.edit.title', :default=>['Edit User'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'user.edit.title', :default=>['Edit User'] }">
 
     <body: class="edit-page user" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="user.edit.heading" name="#{name(:no_wrapper => true)}">
+          <ht key="user.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
             Edit User
           </ht>
         </h2>
