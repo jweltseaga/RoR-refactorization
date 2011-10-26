@@ -11,7 +11,18 @@ class Machine < ActiveRecord::Base
     weight      :integer
     timestamps
   end
-	
+
+  # Paperclip
+	has_attached_file :photo,
+  :styles => {
+    :thumbnail => "100x100>",
+    :medium => "200x200>",
+    :large  => "300x300>",
+    :original => "600x600>"
+  }, 
+ :path => ":rails_root/public/images/:class/:attachment/:id/:style_:basename.:extension",
+ :url  => "/images/:class/:attachment/:id/:style_:basename.:extension"
+
 	translates :name, :description
 	
 	has_many :categories, :through => :machine_assignments, :accessible => true
@@ -24,6 +35,10 @@ class Machine < ActiveRecord::Base
 	
 	children :features, :manual_assignments
 	never_show :feature_translations
+
+def preview
+  description.split.slice(0, 15).join(" ")+"..."
+end
 
   # --- Permissions --- #
 

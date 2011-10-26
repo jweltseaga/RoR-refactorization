@@ -1,0 +1,178 @@
+/* ~ Application CSS Block ~  */
+a {
+  text-decoration: none; }
+
+body {
+  background: #254da5; }
+
+div.wrapper {
+  background: #8ac2e5 url("../images/sub6.jpg") no-repeat bottom right; }
+
+ul.navigation {
+  background: #0d3692; }
+  ul.navigation li {
+    margin-top: 9px; }
+    ul.navigation li.about {
+      background: #1a9bc3; }
+    ul.navigation li.solutions {
+      background: #7dd2e7; }
+    ul.navigation li.resources {
+      background: #9ed5da; }
+    ul.navigation li.employment {
+      background: #24b2e2; }
+    ul.navigation li.contact {
+      background: #7dd2e7; }
+    ul.navigation li:hover ul.sub-nav {
+      left: 0px; }
+    ul.navigation li a {
+      width: 140px;
+      text-align: left;
+      display: block;
+      padding: 4px 0px 6px 15px;
+      padding-bottom: 0px;
+      color: #003e7a;
+      background: url("../images/top_arrow.png") no-repeat 1px -2px;
+      text-decoration: none; }
+      ul.navigation li a:hover {
+        color: #002346;
+        text-decoration: none; }
+    ul.navigation li ul.sub-nav {
+      clear: both;
+      z-index: 55;
+      position: absolute;
+      left: -9999px;
+      background: #a3e0f2; }
+      ul.navigation li ul.sub-nav li {
+        margin: 0px;
+        padding-top: 0px;
+        /* Introducing a padding between the li and the a give the illusion spaced items */
+        padding-left: 0px;
+        float: none; }
+      ul.navigation li ul.sub-nav a {
+        background: none;
+        padding-left: 3px;
+        padding-bottom: 3px;
+        padding-right: 12px;
+        margin-left: 0px;
+        text-align: left;
+        white-space: nowrap;
+        /* Stop text wrapping and creating multi-line dropdown items */
+        display: block; }
+    ul.navigation li li:hover ul {
+      /* Display the dropdown on hover */
+      left: 0;
+      /* Bring back on-screen when needed */
+      background: #a3e0f2;
+      /* It'll look nice semi-transparent */
+      opacity: 1;
+      /* Fade to opaque */ }
+    ul.navigation li li:hover a {
+      /* Set styles for top level when dropdown is hovered */
+      text-decoration: none; }
+    ul.navigation li li:hover ul a {
+      /* Override some top level styles when dropdown is hovered */
+      text-decoration: none;
+      background: none;
+      -webkit-transition: -webkit-transform 0.075s linear; }
+    ul.navigation li li:hover ul li a:hover {
+      /* Set styles for dropdown when items are hovered */
+      background: #a3e0f2; }
+
+div.accent {
+  background: url("../images/in_banner.jpg") no-repeat 50% 50%;
+  height: 146px;
+  width: 778px; }
+
+/** End Top Accents **/
+div.page-title {
+  position: relative;
+  width: 728px;
+  height: 32px;
+  display: block;
+  background: #fff;
+  padding-right: 50px;
+  padding-top: 10px;
+  border-bottom: 3px solid #3479c7; }
+  div.page-title h1 {
+    color: #254da5;
+    font-size: 22px;
+    text-align: right; }
+  div.page-title a[rel="home"] {
+    width: 48px;
+    height: 41px;
+    display: block;
+    background: url(../images/home.jpg);
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    z-index: 5; }
+
+div#left-column {
+  width: 180px;
+  position: absolute;
+  top: 5px;
+  left: 0px; }
+  div#left-column ul.left_nav {
+    list-style-image: url("../images/arrow_s.gif");
+    background-color: #B4E3FF; }
+    div#left-column ul.left_nav li {
+      border-bottom: 1px solid #89c2e0; }
+      div#left-column ul.left_nav li:hover {
+        border-bottom: 1px solid #254da5; }
+      div#left-column ul.left_nav li a:hover {
+        color: #254da5; }
+
+div#seaga_us, div#seaga_uk, div#seaga_india {
+  position: relative;
+  height: 125px;
+  width: 180px;
+  margin-left: 10px;
+  background-repeat: none;
+  background-position: 0px 0px; }
+div#seaga_us img, div#seaga_uk img, div#seaga_india img {
+  display: none; }
+div#seaga_us {
+  background: url(../images/address_usa.jpg) no-repeat; }
+div#seaga_uk {
+  background: url(../images/address_uk.jpg) no-repeat; }
+div#seaga_india {
+  background: url(../images/address_india.jpg) no-repeat; }
+div#seaga_us a, div#seaga_uk a, div#seaga_india a {
+  color: #254da5;
+  text-align: center;
+  display: block;
+  width: 170px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 20px; }
+div.right_panel {
+  background: url("../images/sub6.jpg") no-repeat bottom right; }
+div.footer {
+  position: relative;
+  height: 91px;
+  background: #254da5 url("../images/sub7.jpg") no-repeat;
+  margin-bottom: 10px; }
+
+ul#bottom_nav {
+  position: absolute;
+  list-style-type: none;
+  top: 71px;
+  left: 6px;
+  width: 480px;
+  height: 20px;
+  background: #0d3692; }
+  ul#bottom_nav li {
+    width: 90px;
+    display: inline-block; }
+    ul#bottom_nav li a {
+      display: block;
+      text-align: center;
+      color: #eff3ff;
+      font-size: 9px; }
+
+span#copy_right {
+  font-size: 9px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: white; }

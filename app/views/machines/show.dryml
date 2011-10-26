@@ -1,0 +1,32 @@
+<show-page>
+	<content: >
+		<div class="media">
+			<div class="image_container">
+			<%= image_tag  @machine.photo.url(:large),  {:class => 'machine_img'} %>
+			</div>
+			<div class="pdfs">
+				<collection:manual_assignments />
+			</div>
+		</div>
+		<div class="details">
+			<h2 class="machine_title">
+			    <name/>
+			</h2>
+			<p>
+				<view:description no-wrapper/>
+			</p>
+			<h4 class="features">Product Features</h4>
+			<collection:features />
+			<h4 class="specs">Product Specifications:</h4>
+			<field-list class="specs" fields="height, width, depth, weight" />
+		</div>
+	</content:>
+</show-page>
+
+<def tag="card" for="Feature">
+     <view:name inline-wrapper/>
+</def>
+
+<def tag="card" for="ManualAssignment">
+     <view no-wrapper/>
+</def>

@@ -5,16 +5,119 @@
 <include src="taglibs/auto/rapid/cards"/>
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
-
+<include gem="hobo-jquery" />
+<include src="paperclip" plugin="paperclip_with_hobo"/>
 <set-theme name="clean-sidemenu"/>
+
+<!-- Client side Layout -->
+
+<extend tag="page" attrs="title, full-title" >
+  <old-page merge title="&title" full-title="&full_title" without-live-search without-ajax-progress>
+
+    <stylesheets: param>
+      <stylesheet name="global" param="app-stylesheet"/>
+      <local-css locale="#{params[:locale]}" name="application"/>
+    </stylesheets:>
+<header: replace> </header:>  
+<content: replace>
+ 
+ <div class="wrapper" param>
+    <social locale="#{params[:locale]}" />
+    <div param="site-header">
+     <main-nav/>    
+    </div>
+    <div class="#{params[:locale]}" param="accent" />
+    <div class="page-title" param="page-title">
+      <page-title />
+    </div>
+    <div param="main">
+      <left-nav/>
+      <div class="right_panel" param="content" />  
+    </div>
+    <div param="footer"/>
+ </div>
+    
+  </content:>
+  </old-page>
+</extend>
+
+<!-- /Client Side Layout -->
+
+<extend tag="page">
+  <old-page merge>
+    <custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+  </old-page>
+</extend>
 
 
 <extend tag="page">
   <old-page merge>
     <footer:>
-      <a href="&admin_users_url" if="&current_user.administrator?">
-        <t key="hobo.admin.subsite_name">Admin</t>
-      </a>
+
+     <ul id="bottom_nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="#">About Seaga</a></li>
+      <li><a href="#job">Opportunities</a></li>
+      <li><a href="#contactForm">Contact Us</a></li>
+      <li><a with="&Manual">Operator's Manuals</a></li>
+     </ul>
+     <span id="copy_right">© #{Time.now.year} Seaga - All rights reserved</span>
     </footer:>
   </old-page>
 </extend>
+
+<def tag="left-nav">
+  <div class="left_panel">
+      <ul class="left_nav">
+       <repeat with="&Category.find(:all)" ><li><a/></li></repeat>
+      </ul>
+      <div class="contact_cards">
+        <uk-info />
+        <us-info />
+        <in-info />
+      </div>
+   </div>
+</def>
+
+<def tag="main-nav">
+  <navigation merge-attrs param="default">
+       <nav-item href="#{base_url}/" class="about">About Seaga</nav-item>
+       
+       <li class="solutions">
+          <a href="#" >Vending Solutions</a>
+          <ul class="sub-nav">
+                <repeat with="&Category.find(:all)" ><li><a/></li></repeat>
+          </ul>
+        </li>
+        
+        <li class="resources">
+          <a href="#">Customer Resources</a>
+          <ul class="sub-nav">
+           <li><a href="#Brochure">Brochures</a></li>
+            <nav-item with="&Manual">Manuals</nav-item>
+          </ul>
+        </li>
+       
+        <nav-item with="#job" class="employment"><a href="#employment">Employment</a></nav-item>
+        
+        <li class="contact"><a href="#contactForm">Contact Us</a></li>
+  </navigation>
+</def>
+
+
+<def tag="card" for="MachineAssignment">
+  <card class="machine-assignment" param="default" merge no-wrapper>
+      <a:machine class="photo_link">
+        <%= image_tag  this.photo.url(:medium),  {:class => 'machine_img'} %>
+      </a>
+      <a:machine class="teaser_link">
+        <div class="teaser">
+        <h3 param="heading"><name/></h3>
+        <p><view:preview no-wrapper/></p>
+        </div>
+      </a>
+  </card>
+</def>
+

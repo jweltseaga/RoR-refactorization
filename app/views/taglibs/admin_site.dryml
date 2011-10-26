@@ -2,12 +2,13 @@
 
 <include src="rapid" gem="hobo"/>
 <include gem="hobo-jquery" />
+<include src="paperclip" plugin="paperclip_with_hobo"/>
 
 <include src="taglibs/auto/admin/rapid/cards"/>
 <include src="taglibs/auto/admin/rapid/pages"/>
 <include src="taglibs/auto/admin/rapid/forms"/>
-
 <set-theme name="clean-sidemenu"/>
+
 
 <extend tag="page">
 	<old-page merge>
@@ -56,17 +57,16 @@
 </extend>
 
 
-
-<extend tag="form" for="Machine">
-	<old-form merge multipart>
-    <field-list: fields="name, description, height, width, depth, weight, features"/>
-  </old-form>
-</extend>
-
 <extend tag="form" for="Category">
 	<old-form merge>
 		<field-list: fields="name, description, machines"/>
 	</old-form>
+</extend>
+
+<extend tag="form" for="Machine">
+  <old-form merge multipart>
+    <field-list: fields="name, photo, description, height, width, depth, weight, features"/>
+  </old-form>
 </extend>
 
 <extend tag="page">

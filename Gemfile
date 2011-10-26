@@ -10,6 +10,8 @@ gem 'pg'
 gem 'globalize3'
 gem "will_paginate", "3.0.pre2"
 gem "rake", "0.8.7"
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -32,5 +34,7 @@ gem "rake", "0.8.7"
 # group :development, :test do
 #   gem 'webrat'
 # end
+
 gem "hobo", :git => "git://github.com/tablatom/hobo.git", :branch => "rails3", :ref => "85741ec6b99988fec5c6a72fd73ddd90ec520c5c"
 gem "hobo-jquery", :git => "git://github.com/bryanlarsen/hobo-jquery.git", :branch => "rails3"
+gem 'paperclip', :git => "git://github.com/jeanmartin/paperclip.git", :branch => "master" 

@@ -5,14 +5,27 @@
 Websites::Application.routes.draw do
 
 
-  # Resource routes for controller "manuals"
-  get 'manuals(.:format)' => 'manuals#index', :as => 'manuals'
-  get 'manuals/new(.:format)', :as => 'new_manual'
-  get 'manuals/:id/edit(.:format)' => 'manuals#edit', :as => 'edit_manual'
-  get 'manuals/:id(.:format)' => 'manuals#show', :as => 'manual', :constraints => { :id => %r([^/.?]+) }
-  post 'manuals(.:format)' => 'manuals#create', :as => 'create_manual'
-  put 'manuals/:id(.:format)' => 'manuals#update', :as => 'update_manual', :constraints => { :id => %r([^/.?]+) }
-  delete 'manuals/:id(.:format)' => 'manuals#destroy', :as => 'destroy_manual', :constraints => { :id => %r([^/.?]+) }
+  # Resource routes for controller "machine_assignments"
+  get 'machine_assignments(.:format)' => 'machine_assignments#index', :as => 'machine_assignments'
+  get 'machine_assignments/new(.:format)', :as => 'new_machine_assignment'
+  get 'machine_assignments/:id/edit(.:format)' => 'machine_assignments#edit', :as => 'edit_machine_assignment'
+  get 'machine_assignments/:id(.:format)' => 'machine_assignments#show', :as => 'machine_assignment', :constraints => { :id => %r([^/.?]+) }
+  post 'machine_assignments(.:format)' => 'machine_assignments#create', :as => 'create_machine_assignment'
+  put 'machine_assignments/:id(.:format)' => 'machine_assignments#update', :as => 'update_machine_assignment', :constraints => { :id => %r([^/.?]+) }
+  delete 'machine_assignments/:id(.:format)' => 'machine_assignments#destroy', :as => 'destroy_machine_assignment', :constraints => { :id => %r([^/.?]+) }
+
+  # Reorder routes for controller "machine_assignments"
+  post 'machine_assignments/reorder(.:format)', :as => 'reorder_machine_assignments'
+
+
+  # Resource routes for controller "machines"
+  get 'machines(.:format)' => 'machines#index', :as => 'machines'
+  get 'machines/new(.:format)', :as => 'new_machine'
+  get 'machines/:id/edit(.:format)' => 'machines#edit', :as => 'edit_machine'
+  get 'machines/:id(.:format)' => 'machines#show', :as => 'machine', :constraints => { :id => %r([^/.?]+) }
+  post 'machines(.:format)' => 'machines#create', :as => 'create_machine'
+  put 'machines/:id(.:format)' => 'machines#update', :as => 'update_machine', :constraints => { :id => %r([^/.?]+) }
+  delete 'machines/:id(.:format)' => 'machines#destroy', :as => 'destroy_machine', :constraints => { :id => %r([^/.?]+) }
 
 
   # Resource routes for controller "categories"
@@ -28,6 +41,38 @@ Websites::Application.routes.draw do
 
   # Reorder routes for controller "categories"
   post 'categories/reorder(.:format)', :as => 'reorder_categories'
+
+
+  # Resource routes for controller "features"
+  get 'features/new(.:format)', :as => 'new_feature'
+  get 'features/:id/edit(.:format)' => 'features#edit', :as => 'edit_feature'
+  get 'features/:id(.:format)' => 'features#show', :as => 'feature', :constraints => { :id => %r([^/.?]+) }
+  post 'features(.:format)' => 'features#create', :as => 'create_feature'
+  put 'features/:id(.:format)' => 'features#update', :as => 'update_feature', :constraints => { :id => %r([^/.?]+) }
+  delete 'features/:id(.:format)' => 'features#destroy', :as => 'destroy_feature', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "manuals"
+  get 'manuals(.:format)' => 'manuals#index', :as => 'manuals'
+  get 'manuals/new(.:format)', :as => 'new_manual'
+  get 'manuals/:id/edit(.:format)' => 'manuals#edit', :as => 'edit_manual'
+  get 'manuals/:id(.:format)' => 'manuals#show', :as => 'manual', :constraints => { :id => %r([^/.?]+) }
+  post 'manuals(.:format)' => 'manuals#create', :as => 'create_manual'
+  put 'manuals/:id(.:format)' => 'manuals#update', :as => 'update_manual', :constraints => { :id => %r([^/.?]+) }
+  delete 'manuals/:id(.:format)' => 'manuals#destroy', :as => 'destroy_manual', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "manual_assignments"
+  get 'manual_assignments(.:format)' => 'manual_assignments#index', :as => 'manual_assignments'
+  get 'manual_assignments/new(.:format)', :as => 'new_manual_assignment'
+  get 'manual_assignments/:id/edit(.:format)' => 'manual_assignments#edit', :as => 'edit_manual_assignment'
+  get 'manual_assignments/:id(.:format)' => 'manual_assignments#show', :as => 'manual_assignment', :constraints => { :id => %r([^/.?]+) }
+  post 'manual_assignments(.:format)' => 'manual_assignments#create', :as => 'create_manual_assignment'
+  put 'manual_assignments/:id(.:format)' => 'manual_assignments#update', :as => 'update_manual_assignment', :constraints => { :id => %r([^/.?]+) }
+  delete 'manual_assignments/:id(.:format)' => 'manual_assignments#destroy', :as => 'destroy_manual_assignment', :constraints => { :id => %r([^/.?]+) }
+
+  # Reorder routes for controller "manual_assignments"
+  post 'manual_assignments/reorder(.:format)', :as => 'reorder_manual_assignments'
 
 
   # Lifecycle routes for controller "users"
@@ -54,41 +99,6 @@ Websites::Application.routes.draw do
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
 
-  # Resource routes for controller "manual_assignments"
-  get 'manual_assignments(.:format)' => 'manual_assignments#index', :as => 'manual_assignments'
-  get 'manual_assignments/new(.:format)', :as => 'new_manual_assignment'
-  get 'manual_assignments/:id/edit(.:format)' => 'manual_assignments#edit', :as => 'edit_manual_assignment'
-  get 'manual_assignments/:id(.:format)' => 'manual_assignments#show', :as => 'manual_assignment', :constraints => { :id => %r([^/.?]+) }
-  post 'manual_assignments(.:format)' => 'manual_assignments#create', :as => 'create_manual_assignment'
-  put 'manual_assignments/:id(.:format)' => 'manual_assignments#update', :as => 'update_manual_assignment', :constraints => { :id => %r([^/.?]+) }
-  delete 'manual_assignments/:id(.:format)' => 'manual_assignments#destroy', :as => 'destroy_manual_assignment', :constraints => { :id => %r([^/.?]+) }
-
-  # Reorder routes for controller "manual_assignments"
-  post 'manual_assignments/reorder(.:format)', :as => 'reorder_manual_assignments'
-
-
-  # Resource routes for controller "machine_assignments"
-  get 'machine_assignments(.:format)' => 'machine_assignments#index', :as => 'machine_assignments'
-  get 'machine_assignments/new(.:format)', :as => 'new_machine_assignment'
-  get 'machine_assignments/:id/edit(.:format)' => 'machine_assignments#edit', :as => 'edit_machine_assignment'
-  get 'machine_assignments/:id(.:format)' => 'machine_assignments#show', :as => 'machine_assignment', :constraints => { :id => %r([^/.?]+) }
-  post 'machine_assignments(.:format)' => 'machine_assignments#create', :as => 'create_machine_assignment'
-  put 'machine_assignments/:id(.:format)' => 'machine_assignments#update', :as => 'update_machine_assignment', :constraints => { :id => %r([^/.?]+) }
-  delete 'machine_assignments/:id(.:format)' => 'machine_assignments#destroy', :as => 'destroy_machine_assignment', :constraints => { :id => %r([^/.?]+) }
-
-  # Reorder routes for controller "machine_assignments"
-  post 'machine_assignments/reorder(.:format)', :as => 'reorder_machine_assignments'
-
-
-  # Resource routes for controller "features"
-  get 'features/new(.:format)', :as => 'new_feature'
-  get 'features/:id/edit(.:format)' => 'features#edit', :as => 'edit_feature'
-  get 'features/:id(.:format)' => 'features#show', :as => 'feature', :constraints => { :id => %r([^/.?]+) }
-  post 'features(.:format)' => 'features#create', :as => 'create_feature'
-  put 'features/:id(.:format)' => 'features#update', :as => 'update_feature', :constraints => { :id => %r([^/.?]+) }
-  delete 'features/:id(.:format)' => 'features#destroy', :as => 'destroy_feature', :constraints => { :id => %r([^/.?]+) }
-
-
   # Resource routes for controller "sites"
   get 'sites(.:format)' => 'sites#index', :as => 'sites'
   get 'sites/new(.:format)', :as => 'new_site'
@@ -98,17 +108,16 @@ Websites::Application.routes.draw do
   put 'sites/:id(.:format)' => 'sites#update', :as => 'update_site', :constraints => { :id => %r([^/.?]+) }
   delete 'sites/:id(.:format)' => 'sites#destroy', :as => 'destroy_site', :constraints => { :id => %r([^/.?]+) }
 
-
-  # Resource routes for controller "machines"
-  get 'machines(.:format)' => 'machines#index', :as => 'machines'
-  get 'machines/new(.:format)', :as => 'new_machine'
-  get 'machines/:id/edit(.:format)' => 'machines#edit', :as => 'edit_machine'
-  get 'machines/:id(.:format)' => 'machines#show', :as => 'machine', :constraints => { :id => %r([^/.?]+) }
-  post 'machines(.:format)' => 'machines#create', :as => 'create_machine'
-  put 'machines/:id(.:format)' => 'machines#update', :as => 'update_machine', :constraints => { :id => %r([^/.?]+) }
-  delete 'machines/:id(.:format)' => 'machines#destroy', :as => 'destroy_machine', :constraints => { :id => %r([^/.?]+) }
-
   namespace :admin do
+
+
+    # Resource routes for controller "admin/machine_assignments"
+    post 'machine_assignments(.:format)' => 'machine_assignments#create', :as => 'create_machine_assignment'
+    put 'machine_assignments/:id(.:format)' => 'machine_assignments#update', :as => 'update_machine_assignment', :constraints => { :id => %r([^/.?]+) }
+    delete 'machine_assignments/:id(.:format)' => 'machine_assignments#destroy', :as => 'destroy_machine_assignment', :constraints => { :id => %r([^/.?]+) }
+
+    # Reorder routes for controller "admin/machine_assignments"
+    post 'machine_assignments/reorder(.:format)', :as => 'reorder_machine_assignments'
 
 
     # Resource routes for controller "admin/machines"
@@ -119,39 +128,6 @@ Websites::Application.routes.draw do
     post 'machines(.:format)' => 'machines#create', :as => 'create_machine'
     put 'machines/:id(.:format)' => 'machines#update', :as => 'update_machine', :constraints => { :id => %r([^/.?]+) }
     delete 'machines/:id(.:format)' => 'machines#destroy', :as => 'destroy_machine', :constraints => { :id => %r([^/.?]+) }
-
-
-    # Resource routes for controller "admin/manual_assignments"
-    get 'manual_assignments/new(.:format)', :as => 'new_manual_assignment'
-    post 'manual_assignments(.:format)' => 'manual_assignments#create', :as => 'create_manual_assignment'
-    put 'manual_assignments/:id(.:format)' => 'manual_assignments#update', :as => 'update_manual_assignment', :constraints => { :id => %r([^/.?]+) }
-    delete 'manual_assignments/:id(.:format)' => 'manual_assignments#destroy', :as => 'destroy_manual_assignment', :constraints => { :id => %r([^/.?]+) }
-
-    # Owner routes for controller "admin/manual_assignments"
-    post 'machines/:machine_id/manual_assignments(.:format)' => 'manual_assignments#create_for_machine', :as => 'create_manual_assignment_for_machine'
-
-    # Reorder routes for controller "admin/manual_assignments"
-    post 'manual_assignments/reorder(.:format)', :as => 'reorder_manual_assignments'
-
-
-    # Resource routes for controller "admin/sites"
-    get 'sites(.:format)' => 'sites#index', :as => 'sites'
-    get 'sites/new(.:format)', :as => 'new_site'
-    get 'sites/:id/edit(.:format)' => 'sites#edit', :as => 'edit_site'
-    get 'sites/:id(.:format)' => 'sites#show', :as => 'site', :constraints => { :id => %r([^/.?]+) }
-    post 'sites(.:format)' => 'sites#create', :as => 'create_site'
-    put 'sites/:id(.:format)' => 'sites#update', :as => 'update_site', :constraints => { :id => %r([^/.?]+) }
-    delete 'sites/:id(.:format)' => 'sites#destroy', :as => 'destroy_site', :constraints => { :id => %r([^/.?]+) }
-
-
-    # Resource routes for controller "admin/manuals"
-    get 'manuals(.:format)' => 'manuals#index', :as => 'manuals'
-    get 'manuals/new(.:format)', :as => 'new_manual'
-    get 'manuals/:id/edit(.:format)' => 'manuals#edit', :as => 'edit_manual'
-    get 'manuals/:id(.:format)' => 'manuals#show', :as => 'manual', :constraints => { :id => %r([^/.?]+) }
-    post 'manuals(.:format)' => 'manuals#create', :as => 'create_manual'
-    put 'manuals/:id(.:format)' => 'manuals#update', :as => 'update_manual', :constraints => { :id => %r([^/.?]+) }
-    delete 'manuals/:id(.:format)' => 'manuals#destroy', :as => 'destroy_manual', :constraints => { :id => %r([^/.?]+) }
 
 
     # Resource routes for controller "admin/categories"
@@ -169,6 +145,36 @@ Websites::Application.routes.draw do
     post 'categories/reorder(.:format)', :as => 'reorder_categories'
 
 
+    # Resource routes for controller "admin/features"
+    get 'features/new(.:format)', :as => 'new_feature'
+    post 'features(.:format)' => 'features#create', :as => 'create_feature'
+    put 'features/:id(.:format)' => 'features#update', :as => 'update_feature', :constraints => { :id => %r([^/.?]+) }
+    delete 'features/:id(.:format)' => 'features#destroy', :as => 'destroy_feature', :constraints => { :id => %r([^/.?]+) }
+
+
+    # Resource routes for controller "admin/manuals"
+    get 'manuals(.:format)' => 'manuals#index', :as => 'manuals'
+    get 'manuals/new(.:format)', :as => 'new_manual'
+    get 'manuals/:id/edit(.:format)' => 'manuals#edit', :as => 'edit_manual'
+    get 'manuals/:id(.:format)' => 'manuals#show', :as => 'manual', :constraints => { :id => %r([^/.?]+) }
+    post 'manuals(.:format)' => 'manuals#create', :as => 'create_manual'
+    put 'manuals/:id(.:format)' => 'manuals#update', :as => 'update_manual', :constraints => { :id => %r([^/.?]+) }
+    delete 'manuals/:id(.:format)' => 'manuals#destroy', :as => 'destroy_manual', :constraints => { :id => %r([^/.?]+) }
+
+
+    # Resource routes for controller "admin/manual_assignments"
+    get 'manual_assignments/new(.:format)', :as => 'new_manual_assignment'
+    post 'manual_assignments(.:format)' => 'manual_assignments#create', :as => 'create_manual_assignment'
+    put 'manual_assignments/:id(.:format)' => 'manual_assignments#update', :as => 'update_manual_assignment', :constraints => { :id => %r([^/.?]+) }
+    delete 'manual_assignments/:id(.:format)' => 'manual_assignments#destroy', :as => 'destroy_manual_assignment', :constraints => { :id => %r([^/.?]+) }
+
+    # Owner routes for controller "admin/manual_assignments"
+    post 'machines/:machine_id/manual_assignments(.:format)' => 'manual_assignments#create_for_machine', :as => 'create_manual_assignment_for_machine'
+
+    # Reorder routes for controller "admin/manual_assignments"
+    post 'manual_assignments/reorder(.:format)', :as => 'reorder_manual_assignments'
+
+
     # Resource routes for controller "admin/users"
     get 'users(.:format)' => 'users#index', :as => 'users'
     get 'users/new(.:format)', :as => 'new_user'
@@ -179,20 +185,14 @@ Websites::Application.routes.draw do
     delete 'users/:id(.:format)' => 'users#destroy', :as => 'destroy_user', :constraints => { :id => %r([^/.?]+) }
 
 
-    # Resource routes for controller "admin/machine_assignments"
-    post 'machine_assignments(.:format)' => 'machine_assignments#create', :as => 'create_machine_assignment'
-    put 'machine_assignments/:id(.:format)' => 'machine_assignments#update', :as => 'update_machine_assignment', :constraints => { :id => %r([^/.?]+) }
-    delete 'machine_assignments/:id(.:format)' => 'machine_assignments#destroy', :as => 'destroy_machine_assignment', :constraints => { :id => %r([^/.?]+) }
-
-    # Reorder routes for controller "admin/machine_assignments"
-    post 'machine_assignments/reorder(.:format)', :as => 'reorder_machine_assignments'
-
-
-    # Resource routes for controller "admin/features"
-    get 'features/new(.:format)', :as => 'new_feature'
-    post 'features(.:format)' => 'features#create', :as => 'create_feature'
-    put 'features/:id(.:format)' => 'features#update', :as => 'update_feature', :constraints => { :id => %r([^/.?]+) }
-    delete 'features/:id(.:format)' => 'features#destroy', :as => 'destroy_feature', :constraints => { :id => %r([^/.?]+) }
+    # Resource routes for controller "admin/sites"
+    get 'sites(.:format)' => 'sites#index', :as => 'sites'
+    get 'sites/new(.:format)', :as => 'new_site'
+    get 'sites/:id/edit(.:format)' => 'sites#edit', :as => 'edit_site'
+    get 'sites/:id(.:format)' => 'sites#show', :as => 'site', :constraints => { :id => %r([^/.?]+) }
+    post 'sites(.:format)' => 'sites#create', :as => 'create_site'
+    put 'sites/:id(.:format)' => 'sites#update', :as => 'update_site', :constraints => { :id => %r([^/.?]+) }
+    delete 'sites/:id(.:format)' => 'sites#destroy', :as => 'destroy_site', :constraints => { :id => %r([^/.?]+) }
 
   end
 

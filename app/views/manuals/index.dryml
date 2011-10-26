@@ -1,0 +1,13 @@
+<index-page>
+        <content:>
+       			
+       	<collection/>
+        <div style="clear:both;"></div>
+        </content:>
+</index-page>
+
+<def tag="card" for="Manual">
+  <card class="manual" >
+    <a/>
+  </card>
+</def>

@@ -4,7 +4,11 @@ Websites::Application.routes.draw do
   match 'search' => 'admin/front#search', :as => 'site_search'
 
   root :to => 'front#index'
-	
+  
+  match 'uk/'	=> "front#uk"
+
+  match 'in/' => "front#in"
+
   match 'search' => 'front#search', :as => 'site_search'
 
 

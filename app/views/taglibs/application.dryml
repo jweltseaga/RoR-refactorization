@@ -1,2 +1,70 @@
 <!-- Global taglib - these tags are shared across all subsites -->
 
+
+<def tag="local-css" attrs="locale,name">
+  <link href="/#{locale}/stylesheets/#{name}.css" rel="stylesheet" type="text/css" />
+</def>
+
+<def tag="accents" attrs="locale">
+	<div class="banner"> </div>
+</def>
+
+<def tag="social" attrs="locale">
+	  <ul id="social_media">
+        <li class="twitter" style="margin-left: 0px; "><a href="http://twitter.com/seagaUK"></a></li>
+        <li class="fb" style="margin-left: 0px; "><a href="https://www.facebook.com/pages/Seaga-UK/219832218028791"></a></li>
+        <li class="linkedin" style="margin-left: 0px; "><a href="http://www.seagamfg.com/linkedin/"></a></li>
+        <li class="youtube" style="margin-left: 0px; "><a href="http://www.seagamfg.com/youtube/"></a></li>
+        <li class="blog" style="margin-left: 0px; "><a href="http://blog.seagamfg.com/"></a></li>
+      </ul>
+</def>
+
+<def tag="page-title">
+	<a href="#{base_url}/" rel="home"/>
+	<h1 class="title">#{params[:id].nil? ? controller.controller_name.capitalize : this.name}</h1>
+</def>
+
+<def tag="us-info">
+  <div class="us_contact">
+    <a href="http://www.seagamfg.com/">
+              <p>
+                Seaga Manufacturing, Inc. <br />
+                  700 Seaga Drive <br/>
+                  Freeport, IL 61032 USA <br/>
+                  voice:815-297-9500 <br/>
+              fax:815-297-1700 
+              </p>
+      </a>
+      <a class="info" href="mailto:info@seagamfg.com">info@seagamfg.com</a>
+    </div>
+</def>
+
+<def tag="uk-info">
+    <div class="uk_contact">
+      <a href="http://www.seagaindia.com/">
+              <p>
+                Seaga India Pvt. Ltd.<br/>
+                        309A  MIE, Bahadurgarh<br />
+                        Haryana - 124 507 INDIA<br/>
+                  voice: 91-12-7626 8122 <br/>
+                  fax: 91-12-7626 7079
+              </p>
+            </a>
+      <a class="info" href="mailto:info@seagaindia.com">info@seagaindia.com</a>
+    </div>
+</def>
+
+<def tag="in-info">
+    <div class="in_contact">
+          <a href="http://www.seaga.co.uk/">
+              <p>
+                            Seaga UK Ltd.<br/>
+                            Unit 8, Cae Bach, Off Builder Street,<br/>
+                            Llandudno North Wales LL30 1DR<br/>
+                            voice:+44(0)1492 874010<br/>
+              fax:+44(0)1492 874644
+              </p>
+            </a>
+            <a class="info" href="mailto:info@seaga.co.uk">info@seaga.co.uk</a>
+    </div>
+</def>

@@ -10,6 +10,8 @@ class MachineAssignment < ActiveRecord::Base
 	belongs_to :category
 	acts_as_list :scope => :category
 
+
+
   # --- Permissions --- #
 
   def create_permitted?

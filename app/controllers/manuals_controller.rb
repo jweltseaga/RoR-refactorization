@@ -4,4 +4,8 @@ class ManualsController < ApplicationController
 
   auto_actions :all
 
+  #def index
+	#hobo_index :paginate => false
+  #end
+
 end

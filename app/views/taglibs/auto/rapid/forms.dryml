@@ -39,7 +39,7 @@
 <def tag="form" for="Machine">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, description, height, width, depth, weight, categories, features, manuals" param/>
+    <field-list fields="name, description, height, width, depth, weight, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, categories, features, manuals" param/>
     <div param="actions">
       <submit label="#{ht 'machine.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -63,7 +63,7 @@
 <def tag="form" for="Manual">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, external_description, internal_description, machines" param/>
+    <field-list fields="name, external_description, internal_description, file_name, machines" param/>
     <div param="actions">
       <submit label="#{ht 'manual.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

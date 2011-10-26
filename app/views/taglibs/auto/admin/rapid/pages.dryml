@@ -471,7 +471,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="height, width, depth, weight" param/>
+            <field-list fields="height, width, depth, weight, photo_file_name, photo_content_type, photo_file_size, photo_updated_at" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="feature.collection.heading" count="&this.features.count" >
@@ -730,7 +730,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="external_description, internal_description" param/>
+            <field-list fields="external_description, internal_description, file_name" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine.collection.heading" count="&this.machines.count" >

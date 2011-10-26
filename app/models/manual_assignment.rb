@@ -5,7 +5,8 @@ class ManualAssignment < ActiveRecord::Base
   fields do
     timestamps
   end
-	
+  
+  
 	belongs_to :machine
 	belongs_to :manual
 	acts_as_list :scope => :machine

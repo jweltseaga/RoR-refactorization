@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110922133642) do
+ActiveRecord::Schema.define(:version => 20111025145253) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -73,6 +73,10 @@ ActiveRecord::Schema.define(:version => 20110922133642) do
     t.integer  "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "manual_assignments", :force => true do |t|
@@ -105,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20110922133642) do
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file_name"
   end
 
   create_table "sites", :force => true do |t|

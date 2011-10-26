@@ -3,7 +3,7 @@
 development:
   adapter: postgresql
   database: website_development
-  username: postgres
+  username: bclos
   password: dev123
   host: localhost
 
@@ -13,13 +13,13 @@ development:
 test:
   adapter: postgresql
   database: website_test
-  username: postgres
-  password: dev123
+  username: bclos
+  password: batata700
   host: localhost
 
 production:
   adapter: postgresql
   database: seaga_sites
-  username: deploy
-  password: Vend%4#
+  username: bclos
+  password: batata700
   host: localhost
