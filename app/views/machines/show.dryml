@@ -6,11 +6,12 @@
 			</div>
 			<div class="pdfs">
 				<collection:manual_assignments />
+				<collection:brochure_assignments />
 			</div>
 		</div>
 		<div class="details">
 			<h2 class="machine_title">
-			    <name/>
+			   The <name/>
 			</h2>
 			<p>
 				<view:description no-wrapper/>
@@ -27,6 +28,12 @@
      <view:name inline-wrapper/>
 </def>
 
+<!-- I believe it would be more dry for a polymorphic tag to be used that switched cases between manual/brochure -->
+
 <def tag="card" for="ManualAssignment">
-     <view no-wrapper/>
+		<%= link_to "Manual", this.manual.pdf.url %>
+</def>
+
+<def tag="card" for="BrochureAssignment">
+    <%= link_to "Brochure", this.brochure.pdf.url %>
 </def>

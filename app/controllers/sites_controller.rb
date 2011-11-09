@@ -4,5 +4,5 @@ class SitesController < ApplicationController
 
   auto_actions :all
 
-
+	
 end

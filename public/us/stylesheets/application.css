@@ -119,8 +119,10 @@ div.left_panel {
       border-bottom: 1px solid #89c2e0; }
       div.left_panel ul.left_nav li:hover {
         border-bottom: 1px solid #254da5; }
-      div.left_panel ul.left_nav li a:hover {
-        color: #254da5; }
+      div.left_panel ul.left_nav li a {
+        color: #2a57ba; }
+        div.left_panel ul.left_nav li a:hover {
+          color: #204390; }
   div.left_panel div.contact_cards div {
     height: 90px;
     background: #b6e3ff;
@@ -174,15 +176,15 @@ span#copy_right {
   right: 0px;
   color: white; }
 
-body.category.show-page div.right_panel a.machine-link {
+body.category.show-page div.right_panel a.teaser_link {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid #B4E3FF; }
-  body.category.show-page div.right_panel a.machine-link:hover {
+  body.category.show-page div.right_panel a.teaser_link:hover {
     border-color: #0F3BA4; }
-    body.category.show-page div.right_panel a.machine-link:hover h3.heading {
+    body.category.show-page div.right_panel a.teaser_link:hover h3.heading {
       background: #0f3ba4;
       color: #eff3ff; }
 body.category.show-page div.right_panel div.teaser h3.heading {
@@ -241,3 +243,18 @@ body.machine.show-page div.right_panel div.details {
     body.machine.show-page div.right_panel div.details table.specs td {
       font-size: 11px;
       text-align: left; }
+
+div.pdf_assets ul.list h3.toggle {
+  color: #254da5;
+  font-weight: bold;
+  background: #75b7e0; }
+div.pdf_assets ul.pdfs {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.6); }
+  div.pdf_assets ul.pdfs li a.machine {
+    color: #254da5;
+    font-weight: bold; }
+    div.pdf_assets ul.pdfs li a.machine:hover {
+      background: #254da5;
+      background: rgba(37, 77, 165, 0.7);
+      color: rgba(255, 255, 255, 0.8); }

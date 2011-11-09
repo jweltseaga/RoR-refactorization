@@ -6,8 +6,25 @@
         </content:>
 </index-page>
 
-<def tag="card" for="Manual">
-  <card class="manual" >
-    <a/>
-  </card>
+<def tag="collection" >
+  <div class="pdf_assets">
+	<ul class="list">
+		 <repeat with="&Category.find(:all)" >
+		 	<li class="category">
+			 	<h3 class="toggle"><name/></h3>
+				 <ul class="pdfs">
+				 	<repeat with="&this.machines" >
+				 		<if test="&this.manuals.first">
+							<li>
+								<set-scoped item="&this.manuals.first">
+									<%= link_to scope.item.name, scope.item.pdf.url,{class: 'machine', target: '_blank'} %>
+								</set-scoped>
+							</li>
+						</if>
+					</repeat>
+				 </ul>
+			 </li>
+		 </repeat>
+	</ul>
+  </div>
 </def>

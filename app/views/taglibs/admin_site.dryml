@@ -59,13 +59,25 @@
 
 <extend tag="form" for="Category">
 	<old-form merge>
-		<field-list: fields="name, description, machines"/>
+		<field-list: fields="name, permalink, description, machines"/>
 	</old-form>
 </extend>
 
 <extend tag="form" for="Machine">
   <old-form merge multipart>
-    <field-list: fields="name, photo, description, height, width, depth, weight, features"/>
+    <field-list: fields="name, permalink, photo, description, height, width, depth, weight, features"/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Manual">
+  <old-form merge multipart>
+    <field-list: fields="name, external_description, internal_description, pdf,  machines"/>
+  </old-form>
+</extend>
+ 
+<extend tag="form" for="Brochure">
+  <old-form merge multipart>
+    <field-list: fields="name, external_description, internal_description, pdf,  machines"/>
   </old-form>
 </extend>
 
@@ -79,6 +91,8 @@
     </footer:>
   </old-page>
 </extend>
+
+
 
 
 <def tag="card" for="MachineAssignment">

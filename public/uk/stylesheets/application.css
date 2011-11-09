@@ -50,11 +50,18 @@ ul.navigation {
           width: 135px;
           padding-left: 5px;
           color: #fff;
-          display: block; }
+          display: block;
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          -o-transition: all 0.3s;
+          transition: all 0.3s; }
           ul.navigation li ul.sub-nav li a:hover {
             background: #0773c3; }
 
 div.page-title {
+  moz-box-shadow: 0px -6px 12px rgba(10, 39, 107, 0.65);
+  -webkit-box-shadow: 0px -6px 12px rgba(10, 39, 107, 0.65);
+  box-shadow: 0px -6px 12px rgba(10, 39, 107, 0.65);
   position: relative;
   width: 728px;
   height: 32px;
@@ -204,3 +211,20 @@ body.machine.show-page div.right_panel div.details {
     body.machine.show-page div.right_panel div.details table.specs td {
       font-size: 11px;
       text-align: left; }
+
+div.pdf_assets ul.list h3.toggle {
+  color: #556477;
+  font-weight: bold;
+  background: #ECF1F5; }
+  div.pdf_assets ul.list h3.toggle:hover {
+    color: #254da5; }
+div.pdf_assets ul.pdfs {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.6); }
+  div.pdf_assets ul.pdfs li a.machine {
+    color: #254da5;
+    font-weight: bold; }
+    div.pdf_assets ul.pdfs li a.machine:hover {
+      background: #6581c0;
+      background: rgba(37, 77, 165, 0.7);
+      color: #e8e8e8; }

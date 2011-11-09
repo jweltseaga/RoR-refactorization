@@ -95,6 +95,7 @@ ul#address_list {
 div.footer {
   background: #254da5 url("../images/13.jpg") no-repeat; }
 div#flash {
-  background: url("../images/flash_background.jpg") no-repeat 50% 10px; }
+  background: url("../images/flash_background.jpg") no-repeat 50% 0px;
+  margin-top: -20px; }
 div#header {
   border: 0; }

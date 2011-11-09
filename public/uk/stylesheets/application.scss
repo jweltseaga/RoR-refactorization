@@ -4,6 +4,12 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
+@mixin shadow($x, $y, $z, $c){
+  moz-box-shadow: $x $y $z $c;
+  -webkit-box-shadow: $x $y $z $c;
+  box-shadow: $x $y $z $c;
+}
+$blue:#0e3590;
 body{
 	background:#0e3590;
 }
@@ -60,6 +66,7 @@ div.site-header{
           padding-left:5px;
           color:#fff;
           display:block;
+          @include transition;
            &:hover{
              background: lighten(#065FA1,7);
            }
@@ -70,6 +77,7 @@ div.site-header{
   }
 
 div.page-title {
+  @include shadow(0px,-6px,12px,rgba(darken($blue,8), .65));
   position: relative;
   width: 728px;
   height: 32px;
@@ -283,4 +291,52 @@ body.machine.show-page{
       }
     }
   }
+}
+
+//  ==       PDF layouts    ==
+// Animation script is located in global.js
+div.pdf_assets{
+  ul{
+  
+    &.list{
+    
+      h3.toggle{
+        color:#556477;
+        font-weight:bold;
+        background:#ECF1F5;
+        &:hover{
+          color:#254da5;
+        }
+        span{
+         
+        }
+      }
+    }
+      &.pdfs{
+        background:#fff;
+        background:rgba(#fff,.60);
+        li{
+          
+          &:hover{
+            span.description{
+             
+            }
+          }
+          a.machine{
+            color:#254da5;
+            font-weight:bold;
+            &:hover{
+              background:#6581c0;
+              background:rgba(#254da5,.70);
+              color:darken(#f5f5f5,5);
+            }
+          }
+          span.description{
+            
+          }
+        }
+      }
+    
+  }
+
 }

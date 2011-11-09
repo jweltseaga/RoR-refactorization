@@ -44,7 +44,7 @@
     </div>
     <div class="clear"></div>
     <ul class="sub_nav">
-                  <repeat with="&Category.find(:all)" ><li><a/></li></repeat>
+                 <li repeat="&Category.find(:all)"><a/></li>
     </ul>
     <ul id="address_list">
          <li class="first">

@@ -146,8 +146,9 @@ ul.left_nav {
       border-bottom: 1px solid #254da5; 
   }
   a {
+    color:lighten(#254da5,5);
     &:hover {
-      color: #254da5; }
+      color: darken(#254da5,5); }
       } 
     }
   }
@@ -223,7 +224,7 @@ body.category.show-page{
       li{
       }
     }
-    a.machine-link{
+    a.teaser_link{
       @include transition;
        border: 1px solid #B4E3FF;
       &:hover{
@@ -318,4 +319,49 @@ body.machine.show-page{
       }
     }
   }
+}
+
+//  ==       PDF layouts    ==
+// Animation script is located in global.js
+div.pdf_assets{
+  ul{
+  
+    &.list{
+    
+      h3.toggle{
+        color:#254da5;
+        font-weight:bold;
+        background:darken(#8ac2e5,5);
+        span{
+         
+        }
+      }
+    }
+      &.pdfs{
+        background:#fff;
+        background:rgba(#fff,.60);
+        li{
+          
+          &:hover{
+            span.description{
+             
+            }
+          }
+          a.machine{
+            color:#254da5;
+            font-weight:bold;
+            &:hover{
+              background:#254da5;
+              background:rgba(#254da5,.70);
+              color:rgba(#fff,.80)
+            }
+          }
+          span.description{
+            
+          }
+        }
+      }
+    
+  }
+
 }

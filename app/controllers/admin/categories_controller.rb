@@ -6,4 +6,8 @@ class Admin::CategoriesController < ApplicationController
 	auto_actions_for :site, :create
 	#auto_actions :write_only,:edit,:index
 
+	#def edit
+	#	@category = Category.find_by_permalink(params[:id])
+	#end
+
 end

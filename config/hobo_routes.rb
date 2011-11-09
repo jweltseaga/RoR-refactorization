@@ -5,6 +5,23 @@
 Websites::Application.routes.draw do
 
 
+  # Resource routes for controller "brochures"
+  get 'brochures(.:format)' => 'brochures#index', :as => 'brochures'
+  get 'brochures/new(.:format)', :as => 'new_brochure'
+  get 'brochures/:id/edit(.:format)' => 'brochures#edit', :as => 'edit_brochure'
+  get 'brochures/:id(.:format)' => 'brochures#show', :as => 'brochure', :constraints => { :id => %r([^/.?]+) }
+  post 'brochures(.:format)' => 'brochures#create', :as => 'create_brochure'
+  put 'brochures/:id(.:format)' => 'brochures#update', :as => 'update_brochure', :constraints => { :id => %r([^/.?]+) }
+  delete 'brochures/:id(.:format)' => 'brochures#destroy', :as => 'destroy_brochure', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Index action routes for controller "apis"
+  get 'apis/rss(.:format)', :as => 'rss_apis'
+  get 'apis/json(.:format)', :as => 'json_apis'
+  get 'apis/sitemap(.:format)', :as => 'sitemap_apis'
+  get 'apis/contact(.:format)', :as => 'contact_apis'
+
+
   # Resource routes for controller "machine_assignments"
   get 'machine_assignments(.:format)' => 'machine_assignments#index', :as => 'machine_assignments'
   get 'machine_assignments/new(.:format)', :as => 'new_machine_assignment'
@@ -99,6 +116,19 @@ Websites::Application.routes.draw do
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
 
+  # Resource routes for controller "brochure_assignments"
+  get 'brochure_assignments(.:format)' => 'brochure_assignments#index', :as => 'brochure_assignments'
+  get 'brochure_assignments/new(.:format)', :as => 'new_brochure_assignment'
+  get 'brochure_assignments/:id/edit(.:format)' => 'brochure_assignments#edit', :as => 'edit_brochure_assignment'
+  get 'brochure_assignments/:id(.:format)' => 'brochure_assignments#show', :as => 'brochure_assignment', :constraints => { :id => %r([^/.?]+) }
+  post 'brochure_assignments(.:format)' => 'brochure_assignments#create', :as => 'create_brochure_assignment'
+  put 'brochure_assignments/:id(.:format)' => 'brochure_assignments#update', :as => 'update_brochure_assignment', :constraints => { :id => %r([^/.?]+) }
+  delete 'brochure_assignments/:id(.:format)' => 'brochure_assignments#destroy', :as => 'destroy_brochure_assignment', :constraints => { :id => %r([^/.?]+) }
+
+  # Reorder routes for controller "brochure_assignments"
+  post 'brochure_assignments/reorder(.:format)', :as => 'reorder_brochure_assignments'
+
+
   # Resource routes for controller "sites"
   get 'sites(.:format)' => 'sites#index', :as => 'sites'
   get 'sites/new(.:format)', :as => 'new_site'
@@ -109,6 +139,16 @@ Websites::Application.routes.draw do
   delete 'sites/:id(.:format)' => 'sites#destroy', :as => 'destroy_site', :constraints => { :id => %r([^/.?]+) }
 
   namespace :admin do
+
+
+    # Resource routes for controller "admin/brochures"
+    get 'brochures(.:format)' => 'brochures#index', :as => 'brochures'
+    get 'brochures/new(.:format)', :as => 'new_brochure'
+    get 'brochures/:id/edit(.:format)' => 'brochures#edit', :as => 'edit_brochure'
+    get 'brochures/:id(.:format)' => 'brochures#show', :as => 'brochure', :constraints => { :id => %r([^/.?]+) }
+    post 'brochures(.:format)' => 'brochures#create', :as => 'create_brochure'
+    put 'brochures/:id(.:format)' => 'brochures#update', :as => 'update_brochure', :constraints => { :id => %r([^/.?]+) }
+    delete 'brochures/:id(.:format)' => 'brochures#destroy', :as => 'destroy_brochure', :constraints => { :id => %r([^/.?]+) }
 
 
     # Resource routes for controller "admin/machine_assignments"

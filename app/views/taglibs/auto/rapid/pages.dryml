@@ -5,6 +5,8 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Brochure"><ht key="brochure.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&BrochureAssignment"><ht key="brochure_assignment.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Machine"><ht key="machine.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&MachineAssignment"><ht key="machine_assignment.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Manual"><ht key="manual.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
@@ -12,6 +14,365 @@
     <nav-item with="&Site"><ht key="site.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Api Pages ====== -->
+
+<def tag="index-page" for="Api">
+  <page merge title="#{ht 'api.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page api" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="api.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="api.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Api">
+  <page merge title="#{ht 'api.new.title', :default=>[' New Api'] }">
+    <body: class="new-page api" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="api.new.heading">
+            New Api
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'api.actions.create', :default=>['Create Api']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Api">
+  <page merge title="#{ht 'api.show.title', :default=>['Api'] }">
+
+    <body: class="show-page api" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="api.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Api">
+  <page merge title="#{ht 'api.edit.title', :default=>['Edit Api'] }">
+
+    <body: class="edit-page api" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="api.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Api
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'api.actions.delete', :default=>['Remove This Api']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== BrochureAssignment Pages ====== -->
+
+<def tag="index-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page brochure-assignment" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="brochure_assignment.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="brochure_assignment.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="brochure_assignment.actions.new">New Brochure assignment</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.new.title', :default=>[' New Brochure assignment'] }">
+    <body: class="new-page brochure-assignment" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure_assignment.new.heading">
+            New Brochure assignment
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'brochure_assignment.actions.create', :default=>['Create Brochure assignment']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.show.title', :default=>['Brochure assignment'] }">
+
+    <body: class="show-page brochure-assignment" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="brochure_assignment.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="brochure_assignment.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Brochure assignment
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="position, brochure, machine" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.edit.title', :default=>['Edit Brochure assignment'] }">
+
+    <body: class="edit-page brochure-assignment" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure_assignment.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Brochure assignment
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'brochure_assignment.actions.delete', :default=>['Remove This Brochure assignment']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Brochure Pages ====== -->
+
+<def tag="index-page" for="Brochure">
+  <page merge title="#{ht 'brochure.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page brochure" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="brochure.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="brochure.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="brochure.actions.new">New Brochure</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Brochure">
+  <page merge title="#{ht 'brochure.new.title', :default=>[' New Brochure'] }">
+    <body: class="new-page brochure" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure.new.heading">
+            New Brochure
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'brochure.actions.create', :default=>['Create Brochure']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Brochure">
+  <page merge title="#{ht 'brochure.show.title', :default=>['Brochure'] }">
+
+    <body: class="show-page brochure" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="brochure.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="brochure.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Brochure
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="external_description, internal_description, file_name, pdf_file_name, pdf_content_type, pdf_file_size, pdf_updated_at" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="machine.collection.heading" count="&this.machines.count" >
+                  <human-collection-name collection="machines" your/>
+                </ht>
+              </h3>
+
+              <collection:machines param/>
+            </section>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Brochure">
+  <page merge title="#{ht 'brochure.edit.title', :default=>['Edit Brochure'] }">
+
+    <body: class="edit-page brochure" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Brochure
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'brochure.actions.delete', :default=>['Remove This Brochure']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
 
 
 
@@ -103,7 +464,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="position" param/>
+            <field-list fields="permalink, position" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine_assignment.collection.heading" count="&this.machine_assignments.count" >
@@ -462,7 +823,7 @@
       <section-group>
         <section param="main-content">
           <header param="content-header">
-            <a:manuals param="parent-link">&laquo; <ht key="machine.actions.back_to_parent" parent="Manual" name="&this">Back to <name/></ht></a:manuals>
+            <a:brochures param="parent-link">&laquo; <ht key="machine.actions.back_to_parent" parent="Brochure" name="&this">Back to <name/></ht></a:brochures>
             <h2 param="heading">
               <ht key="machine.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
@@ -480,7 +841,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="height, width, depth, weight, photo_file_name, photo_content_type, photo_file_size, photo_updated_at" param/>
+            <field-list fields="permalink, height, width, depth, weight, photo_file_name, photo_content_type, photo_file_size, photo_updated_at" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="feature.collection.heading" count="&this.features.count" >
@@ -742,7 +1103,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="external_description, internal_description, file_name" param/>
+            <field-list fields="external_description, internal_description, file_name, pdf_file_name, pdf_content_type, pdf_file_size, pdf_updated_at" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine.collection.heading" count="&this.machines.count" >

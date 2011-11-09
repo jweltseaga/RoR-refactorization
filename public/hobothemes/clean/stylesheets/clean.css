@@ -40,7 +40,7 @@ h4 {margin: 10px 0 5px;  font-size: 14px; line-height: 14px;}
 h5 {margin: 10px 0 5px;  font-size: 12px; line-height: 12px;}
 h6 {margin: 10px 0 5px;  font-size: 10px; line-height: 10px;}
 
-li {margin-left: 20px;}
+li {margin-left: 0px;}
 
 a {
 	border-bottom: 1px dotted #ccc;
@@ -116,7 +116,7 @@ form .actions input { margin: 0; }
 .field-list .input-help { color: #888;}
 
 .content-header, .content-body, .content-footer {margin: 0 45px 15px; padding: 0;}
-.content-header {padding: 5px 0;}
+.content-header {padding: 15px 0;}
 .content-body {padding: 15px 0;}
 .content-footer {padding-bottom: 20px;}
 

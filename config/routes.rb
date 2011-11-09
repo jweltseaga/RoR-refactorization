@@ -4,6 +4,14 @@ Websites::Application.routes.draw do
   match 'search' => 'admin/front#search', :as => 'site_search'
 
   root :to => 'front#index'
+
+  match 'vending/:id' => 'categories#show'
+  
+  match 'vending/:category_id/:id' => 'machines#show'
+
+  #resources :machines, :path => "/vending-solutions/:category_id/:machines"
+  #resources :categories, :path => "/vending-solutions/:category_id"
+
   
   match 'uk/'	=> "front#uk"
 

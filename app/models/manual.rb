@@ -10,6 +10,15 @@ class Manual < ActiveRecord::Base
     timestamps
   end
 	
+
+
+
+  # Paperclip
+  has_attached_file :pdf, 
+   :path => ":rails_root/public/assets/manuals/:basename.:extension",
+   :url  => "/assets/manuals/:basename.:extension"
+
+
 	translates :name, :external_description, :internal_description
 	
 	has_many :machines, :through => :manual_assignments, :accessible => true

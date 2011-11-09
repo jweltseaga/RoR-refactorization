@@ -159,3 +159,31 @@ jQuery(function($){
 
 });
   
+jQuery(function($) {
+  // hide all the sub-menus
+  $("h3.toggle").next().hide();
+   
+  // prepend a plus sign to signify that the sub-menus aren't expanded
+  //$("h3.toggle").prepend("+");
+  
+  // add a click function that toggles the sub-menu when the corresponding
+  // span element is clicked
+  $("h3.toggle").click(function() {
+    var e = $(this);
+    if(e.hasClass('active')){
+      e.removeClass('active').next().slideToggle(600);
+    }else{
+    $('h3.toggle.active').removeClass('active').next().slideToggle(600, function(w){
+      //Callback
+    });
+    e.addClass('active').next().slideToggle(600);
+    }
+    
+     //switch the plus to a minus sign or vice-versa
+    //var v = $(this).html().substring( 0, 1 );
+   // if ( v == "+" )
+  //    $(this).html( "-" + $(this).html().substring( 1 ) );
+   // else if ( v == "-" )
+  //    $(this).html( "+" + $(this).html().substring( 1 ) );
+  });
+});

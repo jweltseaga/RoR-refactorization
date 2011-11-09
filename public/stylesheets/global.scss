@@ -198,7 +198,6 @@ body.category.show-page{
       }
     }
    a.machine-link{
-     
       float:left;
       &.photo_link{
         width:150px;
@@ -289,7 +288,60 @@ body.machine.show-page{
   }
 }
 
- 
+//  ==       PDF layouts    ==
+// Animation script is located in global.js
+div.pdf_assets{
+  ul{
+  list-style-type:none;
+    &.list{
+    width:200px;
+      h3.toggle{
+        cursor:pointer;
+        padding:5px 0px;
+        font-weight:normal;
+        font-size:12px;
+        text-align:left;
+        line-height:18px;
+        span{margin-left:20px;font-size:14px;}
+      }
+    }
+      &.pdfs{
+        display:none;
+        li{
+          height:30px;
+          position:relative;
+          font-size:14px;
+          &:hover{
+            span.description{
+              opacity:1.0;
+            }
+          }
+          a.machine{
+            position:absolute;
+            @include transition;
+            line-height:20px;
+            left:0px;
+            text-align:right;
+            width:150px;
+            padding:5px 50px 5px 0px;
+          }
+          span.description{
+            @include transition;
+            opacity:0;
+            position:absolute;
+            left:150px;
+            text-align:left;
+            padding-left:30px;
+            width:200px;
+          }
+        }
+      }
+    
+  }
+
+}
+
+
 #contactForm, .statusMessage {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;

@@ -217,6 +217,51 @@ body.machine.show-page div.right_panel div.details {
       padding-left: 20px;
       text-align: left; }
 
+div.pdf_assets ul {
+  list-style-type: none; }
+  div.pdf_assets ul.list {
+    width: 200px; }
+    div.pdf_assets ul.list h3.toggle {
+      cursor: pointer;
+      padding: 5px 0px;
+      font-weight: normal;
+      font-size: 12px;
+      text-align: left;
+      line-height: 18px; }
+      div.pdf_assets ul.list h3.toggle span {
+        margin-left: 20px;
+        font-size: 14px; }
+  div.pdf_assets ul.pdfs {
+    display: none; }
+    div.pdf_assets ul.pdfs li {
+      height: 30px;
+      position: relative;
+      font-size: 14px; }
+      div.pdf_assets ul.pdfs li:hover span.description {
+        opacity: 1.0; }
+      div.pdf_assets ul.pdfs li a.machine {
+        position: absolute;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        line-height: 20px;
+        left: 0px;
+        text-align: right;
+        width: 150px;
+        padding: 5px 50px 5px 0px; }
+      div.pdf_assets ul.pdfs li span.description {
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        opacity: 0;
+        position: absolute;
+        left: 150px;
+        text-align: left;
+        padding-left: 30px;
+        width: 200px; }
+
 #contactForm, .statusMessage {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;

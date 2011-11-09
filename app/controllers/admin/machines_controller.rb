@@ -4,4 +4,9 @@ class Admin::MachinesController < ApplicationController
 
   auto_actions :all
 
+#  def edit
+#  	@machine = Machine.find_by_permalink(params[:id])
+#  end
+
+
 end

@@ -4,6 +4,7 @@ class Machine < ActiveRecord::Base
 
   fields do
     name        :string
+    permalink   :string
     description :html
     height      :integer
     width       :integer
@@ -20,8 +21,8 @@ class Machine < ActiveRecord::Base
     :large  => "300x300>",
     :original => "600x600>"
   }, 
- :path => ":rails_root/public/images/:class/:attachment/:id/:style_:basename.:extension",
- :url  => "/images/:class/:attachment/:id/:style_:basename.:extension"
+ :path => ":rails_root/public/assets/images/:style_:basename.:extension",
+ :url  => "/assets/images/:style_:basename.:extension"
 
 	translates :name, :description
 	
@@ -32,13 +33,28 @@ class Machine < ActiveRecord::Base
 	
 	has_many :manuals, :through => :manual_assignments, :accessible => true
 	has_many :manual_assignments, :dependent => :destroy, :order => :position
+
+  has_many :brochures, :through => :brochure_assignments, :accessible => true
+  has_many :brochure_assignments, :dependent => :destroy, :order => :position
 	
 	children :features, :manual_assignments
 	never_show :feature_translations
 
-def preview
-  description.split.slice(0, 15).join(" ")+"..."
-end
+  #  def to_param
+  #   permalink
+  #  end 
+
+    def preview
+      description.split.slice(0, 15).join(" ")+"..."
+    end
+
+    def currentManual
+      this.manuals.limit(1) 
+    end
+
+    def currentBrochure
+      this.brochures.limit(1)
+    end
 
   # --- Permissions --- #
 

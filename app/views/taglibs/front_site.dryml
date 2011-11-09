@@ -16,17 +16,17 @@
 
     <stylesheets: param>
       <stylesheet name="global" param="app-stylesheet"/>
-      <local-css locale="#{params[:locale]}" name="application"/>
+      <local-css locale="#{I18n.locale}" name="application"/>
     </stylesheets:>
 <header: replace> </header:>  
 <content: replace>
  
  <div class="wrapper" param>
-    <social locale="#{params[:locale]}" />
+    <social locale="#{I18n.locale}" />
     <div param="site-header">
      <main-nav/>    
     </div>
-    <div class="#{params[:locale]}" param="accent" />
+    <div class="#{I18n.locale} " param="accent" />
     <div class="page-title" param="page-title">
       <page-title />
     </div>
@@ -36,7 +36,7 @@
     </div>
     <div param="footer"/>
  </div>
-    
+   <contactForm/>
   </content:>
   </old-page>
 </extend>
@@ -71,7 +71,7 @@
 <def tag="left-nav">
   <div class="left_panel">
       <ul class="left_nav">
-       <repeat with="&Category.find(:all)" ><li><a/></li></repeat>
+       <li repeat="&Category.find(:all)"><a/></li>
       </ul>
       <div class="contact_cards">
         <uk-info />
@@ -81,6 +81,13 @@
    </div>
 </def>
 
+<def tag="contactForm">
+  <form with="Contact" >
+          <field-list: fields="name, email_address, password, password_confirmation"/>
+         <submit: label="Submit"/>
+    </form>
+</def>
+
 <def tag="main-nav">
   <navigation merge-attrs param="default">
        <nav-item href="#{base_url}/" class="about">About Seaga</nav-item>
@@ -88,15 +95,15 @@
        <li class="solutions">
           <a href="#" >Vending Solutions</a>
           <ul class="sub-nav">
-                <repeat with="&Category.find(:all)" ><li><a/></li></repeat>
+                <li repeat="&Category.find(:all)"><a/></li>
           </ul>
         </li>
         
         <li class="resources">
           <a href="#">Customer Resources</a>
           <ul class="sub-nav">
-           <li><a href="#Brochure">Brochures</a></li>
             <nav-item with="&Manual">Manuals</nav-item>
+            <nav-item with="&Brochure">Brochures</nav-item>
           </ul>
         </li>
        
