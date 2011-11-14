@@ -5,19 +5,20 @@ Websites::Application.routes.draw do
 
   root :to => 'front#index'
 
-  match 'vending/:id' => 'categories#show'
+  #match 'vending/:id' => 'categories#show'
   
-  match 'vending/:category_id/:id' => 'machines#show'
+  #match 'vending/:category_id/:id' => 'machines#show'
 
   #resources :machines, :path => "/vending-solutions/:category_id/:machines"
   #resources :categories, :path => "/vending-solutions/:category_id"
+	
+	#resources :vending_solutions, :controller => "categories" do 
+	match 'vending_solutions/:id' => 'categories#show', :as => 'vending_solution'
+		#resources :machines, :as => "machine"
 
-  
-  match 'uk/'	=> "front#uk"
+	match 'vending_solutions/:vending_solution_id/:id' => 'machines#show', :as => 'vending_solution_machine'
 
-  match 'in/' => "front#in"
-
-  match 'search' => 'front#search', :as => 'site_search'
+  #match 'search' => 'front#search', :as => 'site_search'
 
 
 	#scope "/admin" do

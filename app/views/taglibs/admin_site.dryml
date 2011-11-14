@@ -19,8 +19,15 @@
 		<custom-scripts:>
       <hjq-assets/>
     </custom-scripts>
+    <append-stylesheets:>
+      <stylesheet name="admin"/>
+    </append-stylesheets:>
+    <footer:>
+      <a href="#{base_url}/"><t key="hobo.subsite.back_link">View Site</t></a>
+    </footer:>
 	</old-page>
 </extend>
+
 
 <def tag="flags">
     <%= link_to image_tag("/images/en_flag.gif", :border=>0)+" EN", "?locale=en" %>
@@ -81,16 +88,7 @@
   </old-form>
 </extend>
 
-<extend tag="page">
-  <old-page merge>
-    <append-stylesheets:>
-      <stylesheet name="admin"/>
-    </append-stylesheets:>
-    <footer:>
-      <a href="#{base_url}/"><t key="hobo.subsite.back_link">View Site</t></a>
-    </footer:>
-  </old-page>
-</extend>
+
 
 
 

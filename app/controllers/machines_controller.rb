@@ -2,12 +2,12 @@ class MachinesController < ApplicationController
 
   hobo_model_controller
 
-  auto_actions :all
+  auto_actions :show, :index
 
 
-	#def show
-	#	@machine = Machine.find_by_permalink(params[:id])
-	#end
+	def show
+		hobo_show Machine.find_by_name(params[:id])
+	end
 
 	
 	#def index

@@ -6,12 +6,9 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Brochure"><ht key="brochure.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&BrochureAssignment"><ht key="brochure_assignment.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Machine"><ht key="machine.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&MachineAssignment"><ht key="machine_assignment.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Manual"><ht key="manual.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&ManualAssignment"><ht key="manual_assignment.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Site"><ht key="site.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
@@ -150,9 +147,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="brochure_assignment.actions.new">New Brochure assignment</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -204,12 +198,6 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="brochure_assignment.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Brochure assignment
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
@@ -270,9 +258,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="brochure.actions.new">New Brochure</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -324,12 +309,6 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="brochure.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Brochure
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
@@ -399,9 +378,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="category.actions.new">New Category</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -446,7 +422,6 @@
 
     <content: param>
           <header param="content-header">
-            <a:site param="parent-link">&laquo; <ht key="category.actions.back_to_parent" parent="Site" name="&this">Back to <name/></ht></a:site>
             <h2 param="heading">
               <ht key="category.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
@@ -454,17 +429,11 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="category.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Category
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="permalink, position" param/>
+            <field-list fields="permalink, position, site" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine_assignment.collection.heading" count="&this.machine_assignments.count" >
@@ -533,9 +502,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="feature.actions.new">New Feature</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -580,7 +546,6 @@
 
     <content: param>
           <header param="content-header">
-            <a:machine param="parent-link">&laquo; <ht key="feature.actions.back_to_parent" parent="Machine" name="&this">Back to <name/></ht></a:machine>
             <h2 param="heading">
               <ht key="feature.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
@@ -588,15 +553,10 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="feature.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Feature
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
+            <field-list fields="machine" param/>
           </section>
     </content:>
 
@@ -653,9 +613,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="machine_assignment.actions.new">New Machine assignment</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -708,12 +665,6 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="machine_assignment.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Machine assignment
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
@@ -774,9 +725,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="machine.actions.new">New Machine</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -831,12 +779,6 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="machine.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Machine
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
@@ -920,9 +862,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="manual_assignment.actions.new">New Manual assignment</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -974,12 +913,6 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="manual_assignment.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Manual assignment
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
@@ -1040,9 +973,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="manual.actions.new">New Manual</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -1094,12 +1024,6 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="manual.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Manual
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">
@@ -1169,9 +1093,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="site.actions.new">New Site</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -1223,12 +1144,6 @@
             </h2>
 
             <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="site.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Site
-              </ht>
-            </a>
           </header>
 
           <section param="content-body">

@@ -71,7 +71,7 @@
 <def tag="left-nav">
   <div class="left_panel">
       <ul class="left_nav">
-       <li repeat="&Category.find(:all)"><a/></li>
+       <li repeat="&Category.find(:all, :joins => :site, :conditions => {:sites => {:name => I18n.locale}})"><%= link_to this, vending_solution_path(this) %></li>
       </ul>
       <div class="contact_cards">
         <uk-info />
@@ -95,7 +95,7 @@
        <li class="solutions">
           <a href="#" >Vending Solutions</a>
           <ul class="sub-nav">
-                <li repeat="&Category.find(:all)"><a/></li>
+                <li repeat="&Category.find(:all, :joins => :site, :conditions => {:sites => {:name => I18n.locale}})"><%= link_to this, vending_solution_path(this) %></li>
           </ul>
         </li>
         
@@ -116,15 +116,11 @@
 
 <def tag="card" for="MachineAssignment">
   <card class="machine-assignment" param="default" merge no-wrapper>
-      <a:machine class="photo_link">
-        <%= image_tag  this.photo.url(:medium),  {:class => 'machine_img'} %>
-      </a>
-      <a:machine class="teaser_link">
-        <div class="teaser">
-        <h3 param="heading"><name/></h3>
-        <p><view:preview no-wrapper/></p>
-        </div>
-      </a>
+		<%= link_to image_tag(this.machine.photo.url(:medium),  {:class => 'machine_img'}), vending_solution_machine_path(this.category, this.machine), :class => 'photo_link machine-link' %>
+		<div class="teaser_link machine-link">
+			<h3 param="heading"><%= link_to this.machine.name, vending_solution_machine_path(this.category, this.machine), :class => 'view machine-name' %></h3>
+			<p><view:machine.preview no-wrapper/></p>
+		</div>
   </card>
 </def>
 

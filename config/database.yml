@@ -3,7 +3,9 @@
 development:
   adapter: postgresql
   database: website_development
-  username: bclos
+#  username: bclos
+#  password: dev123
+  username: postgres
   password: dev123
   host: localhost
 

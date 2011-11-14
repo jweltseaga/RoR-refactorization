@@ -40,12 +40,16 @@ class Machine < ActiveRecord::Base
 	children :features, :manual_assignments
 	never_show :feature_translations
 
-  #  def to_param
-  #   permalink
-  #  end 
+  def to_param
+   name
+  end
 
     def preview
-      description.split.slice(0, 15).join(" ")+"..."
+      if description?
+				description.split.slice(0, 15).join(" ")+"..."
+			else
+				"..."
+			end
     end
 
     def currentManual

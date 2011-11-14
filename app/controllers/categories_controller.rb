@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
 
   hobo_model_controller
 
-  auto_actions :all, :except => :index
+  auto_actions :show, :index
 	auto_actions_for :site, :create
 
 	#def index
@@ -10,8 +10,8 @@ class CategoriesController < ApplicationController
 #		hobo_index Category.join(:sites).where("sites.name = &{I18n.locale}")
 #	end
 
-#	def show
-#		@category = Category.find_by_permalink(params[:id])
-#	end
+	def show
+		hobo_show Category.find_by_name(params[:id])
+	end
 
 end

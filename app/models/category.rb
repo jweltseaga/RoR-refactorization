@@ -14,10 +14,12 @@ class Category < ActiveRecord::Base
 	has_many :machines, :through => :machine_assignments, :accessible => true
 	has_many :machine_assignments, :dependent => :destroy, :order => :position
 	children :machine_assignments
+	
+  def to_param
+   name
+  end
+	
 
-  #def to_param
-  # permalink
-  #end
 
   def localize
     self.join(:site).where("sites.name = {I18n.locale}")
