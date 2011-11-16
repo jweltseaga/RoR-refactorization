@@ -4,9 +4,21 @@ class Admin::MachinesController < ApplicationController
 
   auto_actions :all
 
-#  def edit
-#  	@machine = Machine.find_by_permalink(params[:id])
-#  end
+	def show
+		hobo_show Machine.find_by_name(params[:id])
+	end
+	
+	def edit
+		hobo_show Machine.find_by_name(params[:id])
+	end
+	
+	def update
+		hobo_update Machine.find_by_name(params[:id])
+	end
+	
+	def destroy
+		hobo_destroy Machine.find_by_name(params[:id])
+	end
 
 
 end

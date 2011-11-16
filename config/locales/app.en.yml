@@ -8,6 +8,12 @@ en:
     attributes:
       feature:
         name: Feature
+us:  
+  date:
+    order:
+      - :year
+      - :month
+      - :day
 #  attributes:
 #    created_at: Created at
 #    updated_at: Updated at
