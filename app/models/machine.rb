@@ -3,12 +3,13 @@ class Machine < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    name        :string
-    permalink   :string
+    name        :string, :required
+    permalink   :string, :required
     description :html
     height      :integer
     width       :integer
     depth       :integer
+    published   :boolean, :default => 'false'
     weight      :integer
     timestamps
   end
@@ -41,7 +42,7 @@ class Machine < ActiveRecord::Base
 	never_show :feature_translations
 
   def to_param
-   name
+   permalink
   end
 
     def preview

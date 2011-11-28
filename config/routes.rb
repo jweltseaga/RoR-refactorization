@@ -13,10 +13,10 @@ Websites::Application.routes.draw do
   #resources :categories, :path => "/vending-solutions/:category_id"
 	
 	#resources :vending_solutions, :controller => "categories" do 
-	match 'vending_solutions/:id' => 'categories#show', :as => 'vending_solution'
+	match 'vending-machines/:id' => 'categories#show', :as => 'vending_solution'
 		#resources :machines, :as => "machine"
 
-	match 'vending_solutions/:vending_solution_id/:id' => 'machines#show', :as => 'vending_solution_machine'
+	match 'vending-machines/:vending_solution_id/:id' => 'machines#show', :as => 'vending_solution_machine'
 
   #match 'search' => 'front#search', :as => 'site_search'
 

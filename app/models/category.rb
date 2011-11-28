@@ -3,9 +3,10 @@ class Category < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    name        :string
+    name        :string, :required
 		description	:text
-    permalink   :string
+    permalink   :string, :required
+    published   :boolean, :default => 'false'
     timestamps
   end
 	
@@ -16,7 +17,7 @@ class Category < ActiveRecord::Base
 	children :machine_assignments
 	
   def to_param
-   name
+   permalink
   end
 	
 

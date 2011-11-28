@@ -25,6 +25,7 @@
                 Seaga is your one-stop solution for bulk vending machines, snack vending machines, soda vending machines, medical vending machines, cold and frozen vending machines, cold beverage merchandisers, change machines and customized equipment.
             </p>
               <div id="category_images">
+              <%=  %>
               <!--
                 <img src="images/logo.jpg" class="default" />
                 <img src="images/mechanical-vending.jpg" class="mechanical" />
@@ -37,7 +38,7 @@
               -->
               </div>
               <ul id="sub_nav">
-                <li repeat="&Category.find(:all)"><a/></li>
+                <li repeat="&Category.find(:all, :joins => :site, :conditions => {:sites => {:name => I18n.locale}})"><%= link_to this, vending_solution_path(this) %></li>
               </ul>
               <ul id="address_list">
                <li>

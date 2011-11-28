@@ -15,7 +15,7 @@
 <def tag="form" for="Category">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, description, permalink, position, machines, site" param/>
+    <field-list fields="name, description, permalink, published, position, machines, site" param/>
     <div param="actions">
       <submit label="#{ht 'category.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -51,7 +51,7 @@
 <def tag="form" for="Machine">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, permalink, description, height, width, depth, weight, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, brochures, categories, features, manuals" param/>
+    <field-list fields="name, permalink, description, height, width, depth, published, weight, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, brochures, categories, features, manuals" param/>
     <div param="actions">
       <submit label="#{ht 'machine.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

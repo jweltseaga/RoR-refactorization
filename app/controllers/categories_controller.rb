@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
 #	end
 
 	def show
-		hobo_show Category.find_by_name(params[:id])
+		hobo_show Category.find_by_permalink(params[:id])
 	end
 
 end
